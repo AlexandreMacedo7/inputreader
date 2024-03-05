@@ -22,7 +22,8 @@ public class Main {
         }catch(NumberFormatException | ExceptionValue exception){
             System.out.println("Error: Invalid entry! Please enter an integer and greater than 0");
         }
-
-        sc.close();
+        finally {
+            sc.close();
+        }
     }
 }
