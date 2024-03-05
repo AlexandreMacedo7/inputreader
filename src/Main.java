@@ -1,3 +1,5 @@
+import exception.ExceptionValue;
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,16 +9,24 @@ public class Main {
 
         try{
 
-            System.out.println("Enter an integer: ");
+            System.out.println("Enter an integer greater than 0: ");
             String input = sc.nextLine();
 
             int number = Integer.parseInt(input);
+
+            if (number < 0){
+                throw new ExceptionValue("Number less than 0!");
+            }
 
             System.out.println("Number entered " + number);
 
         }catch(NumberFormatException exception){
             System.out.println("Error: Invalid entry! Please enter an integer.");
         }
+        catch (ExceptionValue exceptionValue){
+            System.out.println("Error: " + exceptionValue.getMessage());
+        }
+
         sc.close();
     }
 }
