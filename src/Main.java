@@ -17,14 +17,10 @@ public class Main {
             if (number < 0){
                 throw new ExceptionValue("Number less than 0!");
             }
-
             System.out.println("Number entered " + number);
 
-        }catch(NumberFormatException exception){
-            System.out.println("Error: Invalid entry! Please enter an integer.");
-        }
-        catch (ExceptionValue exceptionValue){
-            System.out.println("Error: " + exceptionValue.getMessage());
+        }catch(NumberFormatException | ExceptionValue exception){
+            System.out.println("Error: Invalid entry! Please enter an integer and greater than 0");
         }
 
         sc.close();
