@@ -7,7 +7,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        try{
+        try(sc){
 
             System.out.println("Enter an integer greater than 0: ");
             String input = sc.nextLine();
@@ -21,9 +21,6 @@ public class Main {
 
         }catch(NumberFormatException | ExceptionValue exception){
             System.out.println("Error: Invalid entry! Please enter an integer and greater than 0");
-        }
-        finally {
-            sc.close();
         }
     }
 }
